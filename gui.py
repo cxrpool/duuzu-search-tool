@@ -33,8 +33,11 @@ def search_songs(file_path, keywords): #searching song titles!
             line = line.strip()
             if line.startswith("[") and line.endswith("]"): #if we're on a new key section
                 current_key = line
-            else:
-                songs.append([line, current_key[1:-1]])  # put the song title and key into a list
+            else: #if its not, it must be a song
+                match = re.match(r'^(.*?)(~?\d+(?:\.\d+)?)\)$', line) #extract bpm from parantheses using regex
+                if match:
+                    bpm = match.group(2).replace('~', '') #get rid of the ~ symbol for live bpms
+                    songs.append([line, current_key[1:-1], float(bpm)])  # put the song title and key into a list
 
     # Split the input string into individual keywords and convert them to lowercase
     keywords_lower = [keyword.lower() for keyword in keywords.split()]
@@ -42,14 +45,8 @@ def search_songs(file_path, keywords): #searching song titles!
     # Filter song titles that contain any of the keywords
     matching_songs = [song for song in songs if all(keyword in song[0].lower() for keyword in keywords_lower)]
 
-    goodSongs = []
-    for i in range(len(matching_songs)): #i could've done this in the earlier for loop but i already had this code
-        match = re.match(r'^(.*?)(~?\d+(?:\.\d+)?)\)$', matching_songs[i][0]) #extract bpm from parantheses using regex
-        if match:
-            bpm = match.group(2).replace('~', '') #get rid of the ~ symbol for live bpms
-            goodSongs.append((matching_songs[i][0], matching_songs[i][1], float(bpm)))
-    goodSongs.sort(key=lambda x: x[0])
-    return goodSongs
+    
+    return matching_songs
 
     
 
@@ -178,7 +175,7 @@ def on_select(event):
     
 
 def toggle_entries():
-    if key_checkbox_var.get(): #i feel like there's a better way to do this lol
+    if key_checkbox_var.get():
         search_checkbox_var.set(False)
         key_entry.config(state='normal')
         bpm_entry.config(state='normal')
