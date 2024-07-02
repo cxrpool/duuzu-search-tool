@@ -1,3 +1,6 @@
+duuzu sort tool by cxrpool (a cxrtool perhaps??? No.)
+
+Easily sort through the duuzu bpm and key database
 All you need is python 3 (any version) to run this (tkinter comes with python)
 
 - By default the tool enables key/bpm search, where you type in a key formatted like Amaj or Amin and a bpm to search for songs in that key and close to that bpm. 
