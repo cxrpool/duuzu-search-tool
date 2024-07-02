@@ -6,4 +6,6 @@ All you need is python 3 (any version) to run this (tkinter comes with python)
   Clicking on a result in this mode will change your bpm and key search to that of the selected song
 - For both modes, double clicking on a result will open a Google tab with the title of the song so you can easily view it. Sorry duckduckgo users
 
+- For future releases of the duuzu key/bpm database, just replace database.txt with the new version and rename it to database.txt
+
 Thanks to duuzu for letting me use his database. Go follow them! https://twitter.com/duuzu_
