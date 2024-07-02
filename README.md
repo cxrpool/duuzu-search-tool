@@ -10,4 +10,4 @@ Easily sort through the duuzu bpm and key database. All you need is python 3 (an
 
 - For future releases of the duuzu key/bpm database, just replace database.txt with the new version and rename it to database.txt
 
-Thanks to duuzu for letting me use his database. Go follow them! https://twitter.com/duuzu_
+Thanks to duuzu for letting me use his database. Go follow them on twitter! @duuzu_
