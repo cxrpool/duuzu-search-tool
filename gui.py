@@ -178,7 +178,7 @@ def on_select(event):
     
 
 def toggle_entries():
-    if key_checkbox_var.get():
+    if key_checkbox_var.get(): #i feel like there's a better way to do this lol
         search_checkbox_var.set(False)
         key_entry.config(state='normal')
         bpm_entry.config(state='normal')
