@@ -1,4 +1,4 @@
-duuzu sort tool by cxrpool (a cxrtool perhaps??? No.)
+duuzu search tool by cxrpool (a cxrtool perhaps??? No.)
 
 Easily sort through the duuzu bpm and key database. All you need is python 3 (any version) to run this (tkinter comes with python)
 To run it just download the code, put it in a folder and run gui.py
