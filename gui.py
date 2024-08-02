@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import font 
 import webbrowser
 import re
+import os
 
 
 titleResults = []
@@ -135,7 +136,8 @@ def on_checkbox_click(var):
         var1.set(0)
 
 def search():
-    file_path = 'database.txt'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, 'database.txt')
     if key_checkbox_var.get(): #search for songs with key and bpm
         key = key_entry.get()
         bpm = bpm_entry.get()
